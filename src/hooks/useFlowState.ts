@@ -2,8 +2,8 @@ import { useCallback, useState } from 'react';
 import { applyNodeChanges, applyEdgeChanges, addEdge, type Edge, type Node, type NodeChange, type EdgeChange, type Connection } from '@xyflow/react';
 
 const initialNodes = [
-  { id: 'n1', position: { x: 0, y: 0 }, data: { label: 'Node 1' } },
-  { id: 'n2', position: { x: 0, y: 100 }, data: { label: 'Node 2' } },
+  { id: 'n1', type: 'requestNode', position: { x: 0, y: 0 }, data: { label: 'Node 1' } },
+  { id: 'n2', type: 'messageNode', position: { x: 150, y: 0 }, data: { label: 'Node 2' } },
 ];
 const initialEdges = [{ id: 'n1-n2', source: 'n1', target: 'n2' }];
 
