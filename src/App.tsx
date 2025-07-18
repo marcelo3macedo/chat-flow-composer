@@ -1,9 +1,7 @@
+import { FlowCanvas } from './components/Flow';
+
 function App() {
-  return (
-    <>
-      <h1>Hello World</h1>
-    </>
-  )
+  return <FlowCanvas />;
 }
 
-export default App
+export default App;
