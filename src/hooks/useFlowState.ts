@@ -5,10 +5,12 @@ const initialNodes = [
   { id: 'n1', type: 'initialNode', position: { x: 0, y: 0 }, data: { label: 'Node 1' } },
   { id: 'n2', type: 'requestNode', position: { x: 150, y: 0 }, data: { label: 'Node 2' } },
   { id: 'n3', type: 'messageNode', position: { x: 300, y: 0 }, data: { label: 'Node 3' } },
+  { id: 'n4', type: 'variablesNode', position: { x: 450, y: 0 }, data: { label: 'Node 4' } },
 ];
 const initialEdges = [
   { id: 'n1-n2', source: 'n1', target: 'n2' },
-  { id: 'n2-n3', source: 'n2', target: 'n3' }
+  { id: 'n2-n3', source: 'n2', target: 'n3' },
+  { id: 'n3-n4', source: 'n3', target: 'n4' }
 ];
 
 export function useFlowState() {
