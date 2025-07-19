@@ -1,9 +1,10 @@
 import type { ModalActions } from "../../../interfaces/Plugin";
+import { icons } from "../../../shared/ui/icons";
 import { Modal } from "./Base";
 
 export function VariableModal({ open }: ModalActions) {
   return (
-    <Modal isOpen={open} title="Variable">
+    <Modal isOpen={open} title="Variable" Icon={icons.VARIABLES}>
         <form className="space-y-4">
             <div>
             <label className="block text-sm font-medium text-gray-700">Text</label>

@@ -12,6 +12,7 @@ export interface BaseNodeProps {
 export type HandleType = 'source-only' | 'source-target';
 
 export interface ModalProps {
+  Icon: ElementType;
   isOpen: boolean;
   title: string;
   children: ReactNode;
