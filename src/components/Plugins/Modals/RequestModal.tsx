@@ -1,9 +1,10 @@
 import type { ModalActions } from "../../../interfaces/Plugin";
+import { icons } from "../../../shared/ui/icons";
 import { Modal } from "./Base";
 
 export function RequestModal({ open }: ModalActions) {
   return (
-    <Modal isOpen={open} title="Request">
+    <Modal isOpen={open} title="Request" Icon={icons.REQUEST}>
         <form className="space-y-4">
             <div>
             <label className="block text-sm font-medium text-gray-700">Text</label>
