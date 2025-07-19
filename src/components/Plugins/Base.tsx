@@ -1,14 +1,21 @@
 import { Handle, Position } from "@xyflow/react";
-import type { BaseNodeProps } from "../../hooks/usePluginState";
+import type { BaseNodeProps } from "../../interfaces/Plugin";
+import useModalStore from "../../store/flow/modal";
 
 export function BaseNode({
   icon: Icon,
   title,
   description,
   handleType = 'source-target',
+  type = 'initial',
 }: BaseNodeProps) {
+  const setSelected = useModalStore(state => state.setSelected);
+  const onClick = () => {
+    setSelected(type)
+  }
+
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center" onClick={onClick}>
       <div className="
         relative border border-gray-300 rounded-lg shadow-sm 
         p-2 flex items-center justify-center bg-gray-100

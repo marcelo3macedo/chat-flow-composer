@@ -3,10 +3,13 @@ import { BaseNode } from "./Base";
 
 export function MessageNode() {
   return (
-    <BaseNode
-      icon={ChatBubbleLeftEllipsisIcon}
-      title="Message"
-      description="Sends a message"
-    />
+    <>
+      <BaseNode
+        icon={ChatBubbleLeftEllipsisIcon}
+        type='message'
+        title="Message"
+        description="Sends a message"
+      />
+    </>
   );
 }
