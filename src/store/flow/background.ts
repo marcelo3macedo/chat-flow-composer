@@ -1,9 +1,5 @@
 import { create } from 'zustand';
-
-interface BackgroundState {
-  backgroundImage: string;
-  setBackgroundImage: (url: string) => void;
-}
+import type { BackgroundState } from '../../interfaces/Flow';
 
 const defaultBackgroundImage = import.meta.env.VITE_DEFAULT_BG_IMAGE || '/fallback-bg.jpg';
 

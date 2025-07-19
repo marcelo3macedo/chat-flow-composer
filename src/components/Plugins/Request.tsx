@@ -4,6 +4,7 @@ import { BaseNode } from "./Base";
 export function RequestNode() {
   return (
     <BaseNode
+      type="request"
       icon={GlobeAltIcon}
       title="Request"
       description="Make a HTTP request"
