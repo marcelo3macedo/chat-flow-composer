@@ -1,7 +1,6 @@
 import type { FlowBackgroundProps } from "../../interfaces/Flow";
 import useBackgroundStore from "../../store/flow/background";
 import '@xyflow/react/dist/style.css';
-import { Modals } from "../Plugins/Modals";
 
 export default function FlowBackground({ children }:FlowBackgroundProps) {
   const backgroundImage = useBackgroundStore(state => state.backgroundImage);
@@ -22,8 +21,6 @@ export default function FlowBackground({ children }:FlowBackgroundProps) {
       <div style={{ position: 'relative', zIndex: 1, width: '100%', height: '100vh' }}>
         {children}
       </div>
-
-      <Modals />
     </div>
   );
 }
