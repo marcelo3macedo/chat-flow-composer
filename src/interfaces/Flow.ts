@@ -1,3 +1,4 @@
+import type { Edge, Node } from "@xyflow/react";
 import type { ReactNode } from "react";
 
 export interface FlowBackgroundProps {
@@ -12,4 +13,9 @@ export interface BackgroundState {
 export interface ModalState {
   selected: string;
   setSelected: (selected: string) => void;
+}
+
+export interface ContentState {
+  nodes: Node[];
+  edges: Edge[];
 }

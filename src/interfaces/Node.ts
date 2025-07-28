@@ -16,7 +16,9 @@ export type IconKeys = keyof typeof IconKeys;
 
 export interface NodesMenuState {
   menu?: MenuState[];
+  activeGroup?: MenuState;
   setMenu: (menu: MenuState[]) => void;
+  setActiveGroup: (activeGroup: MenuState | undefined) => void;
 }
 
 export interface MenuState {
@@ -28,4 +30,5 @@ export interface MenuState {
 export interface MenuItemState {
   name: string;
   description: string;
+  type: string;
 }

@@ -1,12 +1,11 @@
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import useNodesMenuStore from "../../../store/nodes/menu";
-import type { MenuState } from "../../../interfaces/Node";
 import { getIconByName } from "../../../shared/ui/icons";
+import { useMenuState } from "../../../hooks/useMenuState";
 
 export default function NodeDrillDownMenu() {
-  const [activeGroup, setActiveGroup] = useState<null | MenuState>(null);
-  const { menu }  = useNodesMenuStore();
+  const { menu, activeGroup, setActiveGroup }  = useNodesMenuStore();
+  const { menuSelected } = useMenuState();
 
   if (!menu) return <></>
 
@@ -44,7 +43,7 @@ export default function NodeDrillDownMenu() {
           >
             <button
               className="text-sm text-gray-500 mb-2"
-              onClick={() => setActiveGroup(null)}
+              onClick={() => setActiveGroup(undefined)}
             >
               ← Back
             </button>
@@ -53,7 +52,7 @@ export default function NodeDrillDownMenu() {
               {activeGroup.items.map((item) => {
                 const Icon = getIconByName(item.name);
                 return (
-                  <li key={item.name} className="p-4 bg-gray-100 rounded-md hover:bg-gray-200 cursor-pointer flex items-center">
+                  <li key={item.name} className="p-4 bg-gray-100 rounded-md hover:bg-gray-200 cursor-pointer flex items-center" onClick={() => { menuSelected(item) }}>
                     <Icon className="h-8 w-8 text-slate-700" />
                     <div className="pl-2">
                       <h2 className="text-lg text-gray-700">{item.name}</h2>
