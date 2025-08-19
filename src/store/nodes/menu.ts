@@ -8,10 +8,12 @@ const defaultMenu = [{
       {
         name: "Manual",
         description: "Start flow manually.",
+        type: "manually"
       },
       {
         name: "Webhook",
         description: "Trigger via HTTP request.",
+        type: "webhook"
       },
     ],
   },
@@ -22,6 +24,7 @@ const defaultMenu = [{
       {
         name: "Github",
         description: "React to GitHub events.",
+        type: "github"
       },
     ],
   },
@@ -32,20 +35,25 @@ const defaultMenu = [{
       {
         name: "Message",
         description: "Send or show a message.",
+        type: "message"
       },
       {
         name: "Request",
         description: "Make HTTP requests.",
+        type: "request"
       },
       {
         name: "Variables",
         description: "Set or update variables.",
+        type: "variables"
       },
     ],
   }]
 
 const useNodesMenuStore = create<NodesMenuState>((set) => ({
   menu: defaultMenu,
+  activeGroup: undefined,
   setMenu: (menu: MenuState[]) => set({ menu }),
+  setActiveGroup: (activeGroup: MenuState | undefined) => set({ activeGroup }),
 }));
 export default useNodesMenuStore;
