@@ -8,9 +8,10 @@ export default function FlowRenderer() {
     edges,
     onNodesChange,
     onEdgesChange,
-    onConnect
+    onConnect,
+    onConnectEnd,
   } = useFlowState();
-
+  
   return (
     <ReactFlow
       nodes={nodes}
@@ -19,6 +20,7 @@ export default function FlowRenderer() {
       onNodesChange={onNodesChange}
       onEdgesChange={onEdgesChange}
       onConnect={onConnect}
+      onConnectEnd={onConnectEnd}
       fitView>
       <Controls />
       <MiniMap

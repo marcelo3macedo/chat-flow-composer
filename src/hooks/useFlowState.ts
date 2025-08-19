@@ -1,9 +1,11 @@
 import { useCallback } from 'react';
-import { type NodeChange, type EdgeChange, type Connection } from '@xyflow/react';
+import { type NodeChange, type EdgeChange, type Connection, type FinalConnectionState } from '@xyflow/react';
 import useFlowContent from '../store/flow/content';
+import { useConnectState } from './useConnectState';
 
 export function useFlowState() {
   const { nodes, edges } = useFlowContent();
+  const { connectionEnded } = useConnectState();
 
   const onNodesChange = useCallback(
     (_changes: NodeChange[]) => () => {},
@@ -17,6 +19,9 @@ export function useFlowState() {
     (_params: Connection) => () => {},
     [],
   );
+  const onConnectEnd = useCallback((event: MouseEvent | TouchEvent, params: FinalConnectionState) => {
+    connectionEnded(event, params);
+  }, [connectionEnded]);
 
-  return { nodes, edges, onNodesChange, onEdgesChange, onConnect };
+  return { nodes, edges, onNodesChange, onEdgesChange, onConnect, onConnectEnd };
 }
