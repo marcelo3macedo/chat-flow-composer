@@ -1,13 +1,18 @@
-import { FlowCanvas } from './components/Flow';
 import './App.css';
-import Resources from './components/Resources';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Flows from "./pages/Flows";
+import Flow from "./pages/Flow";
 
 function App() {
   return (
-    <>
-      <FlowCanvas />
-      <Resources />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/flows" element={<Flows />} />
+        <Route path="/flow/:id" element={<Flow />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
