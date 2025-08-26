@@ -10,10 +10,10 @@ const useWorkflows = () => {
     const load = async () => {
       try {
         setIsLoading(true);
-        const data = await fetchWorkflows();
+        const data:any = await fetchWorkflows();
         setWorkflows(data);
 
-      } catch (err) {
+      } catch (err:any) {
         setError(err);
       } finally {
         setIsLoading(false);
