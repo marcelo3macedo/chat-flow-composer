@@ -6,7 +6,7 @@ import Flow from "./pages/Flow";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/chat-flow-composer">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/flows" element={<Flows />} />
