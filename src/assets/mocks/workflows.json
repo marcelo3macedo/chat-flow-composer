@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "name": "Backup de Dados diário",
+    "tags": ["backup", "cloud"],
+    "enabled": true
+  },
+  {
+    "id": "2",
+    "name": "Notificação de novo usuário",
+    "tags": ["email", "automação"],
+    "enabled": true
+  },
+  {
+    "id": "3",
+    "name": "Processamento de faturas",
+    "tags": ["faturamento", "financeiro"],
+    "enabled": false
+  },
+  {
+    "id": "4",
+    "name": "Análise de métricas do site",
+    "tags": ["dados", "análise", "relatório"],
+    "enabled": true
+  }
+]
