@@ -1,7 +1,8 @@
-import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
 import { Switch } from '@headlessui/react';
-import type { Workflow } from '../../interfaces/Workflow';
+import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+
+import type { Workflow } from "@Composer/interfaces/Workflow";
 
 const WorkflowItem = ({ workflow }: { workflow: Workflow}) => {
   const [enabled, setEnabled] = useState(workflow.enabled);

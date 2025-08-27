@@ -1,4 +1,5 @@
 import { FiGitPullRequest, FiSettings } from "react-icons/fi";
+
 import navItemsJson from "../assets/mocks/navItems.json";
 
 const iconMap = {

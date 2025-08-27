@@ -1,5 +1,6 @@
+import useFlowContent from "@Composer/store/flow/content";
+
 import type { Edge, Node } from "@xyflow/react";
-import useFlowContent from "../store/flow/content";
 
 export function useNodeState() {
   const add = (node: Node, edge: Edge | undefined) => {
