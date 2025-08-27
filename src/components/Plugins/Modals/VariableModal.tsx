@@ -1,5 +1,6 @@
-import type { ModalActions } from "../../../interfaces/Plugin";
-import { icons } from "../../../shared/ui/icons";
+import type { ModalActions } from "@Composer/interfaces/Plugin";
+import { icons } from "@Composer/shared/ui/icons";
+
 import { Modal } from "./Base";
 
 export function VariableModal({ open }: ModalActions) {

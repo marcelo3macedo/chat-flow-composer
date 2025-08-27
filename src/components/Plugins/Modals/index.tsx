@@ -1,4 +1,5 @@
-import useModalStore from "../../../store/flow/modal";
+import useModalStore from "@Composer/store/flow/modal";
+
 import { MessageModal } from "./MessageModal";
 import { RequestModal } from "./RequestModal";
 import { VariableModal } from "./VariableModal";

@@ -1,8 +1,10 @@
+const baseUrl = import.meta.env.VITE_BASE_URL;
+
 const Navbar = () => {
   return (
     <nav className="bg-[#282a36] border-b border-[#44475a] p-4 flex justify-between items-center">
       <div className="flex items-center space-x-2">
-        <img src="/logo.png" alt="n8n Logo" className="h-10" />
+        <img src={`${baseUrl}/logo.png`} alt="n8n Logo" className="h-10" />
       </div>
 
       <button

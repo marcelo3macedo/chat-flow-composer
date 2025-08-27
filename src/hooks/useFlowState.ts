@@ -1,6 +1,8 @@
-import { useCallback } from 'react';
 import { type NodeChange, type EdgeChange, type Connection, type FinalConnectionState } from '@xyflow/react';
-import useFlowContent from '../store/flow/content';
+import { useCallback } from 'react';
+
+import useFlowContent from '@Composer/store/flow/content';
+
 import { useConnectState } from './useConnectState';
 
 export function useFlowState() {

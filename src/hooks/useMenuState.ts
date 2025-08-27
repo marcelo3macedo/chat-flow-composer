@@ -1,10 +1,12 @@
-import type { MenuItemState } from "../interfaces/Node";
-import { generateNodeByType } from "../shared/utils/nodeUtils";
-import useConnectEdgesStore from "../store/edges/connect";
-import useModalStore from "../store/flow/modal";
-import useNodesMenuStore from "../store/nodes/menu";
+import { generateEdgeByType } from "@Composer/shared/utils/edgeUtils";
+import { generateNodeByType } from "@Composer/shared/utils/nodeUtils";
+import useConnectEdgesStore from "@Composer/store/edges/connect";
+import useModalStore from "@Composer/store/flow/modal";
+import useNodesMenuStore from "@Composer/store/nodes/menu";
+
 import { useNodeState } from "./useNodeState";
-import { generateEdgeByType } from "../shared/utils/edgeUtils";
+
+import type { MenuItemState } from "../interfaces/Node";
 
 export function useMenuState() {
   const setSelected = useModalStore(state => state.setSelected);

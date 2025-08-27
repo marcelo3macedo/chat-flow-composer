@@ -1,7 +1,8 @@
-import WorkflowItem from './WorkflowItem';
-import useWorkflows from '../../hooks/useWorkflows';
-import type { Workflow } from '../../interfaces/Workflow';
-import LoadingScreen from '../General/Loading/LoadingScreen';
+import useWorkflows from "@Composer/hooks/useWorkflows";
+import type { Workflow } from "@Composer/interfaces/Workflow";
+
+import WorkflowItem from "./WorkflowItem";
+import LoadingScreen from "../General/Loading/LoadingScreen";
 
 const WorkflowList = () => {
   const { workflows, isLoading } = useWorkflows();

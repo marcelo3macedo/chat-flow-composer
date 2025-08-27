@@ -1,5 +1,5 @@
-import { useMenuState } from "../../hooks/useMenuState";
-import type { BaseNodeProps } from "../../interfaces/Plugin";
+import { useMenuState } from "@Composer/hooks/useMenuState";
+import type { BaseNodeProps } from "@Composer/interfaces/Plugin";
 
 export function BaseInitialNode({
   icon: Icon,
