@@ -25,16 +25,22 @@ export default function FlowHeader() {
             </div>
 
             <div className="flex items-center space-x-4">
-            <button
-                onClick={() => updateWorkflowField('active', !workflow.active)}
-                className={`px-3 py-1 rounded-md font-medium text-sm transition-colors ${
-                workflow?.active
-                    ? "bg-[#50fa7b] text-[#1e1f29] hover:bg-[#3ce868]"
-                    : "bg-gray-600 text-gray-200 hover:bg-gray-500"
-                }`}
-            >
-                {workflow.active ? "Active" : "Inactive"}
-            </button>
+                <button
+                    onClick={() => updateWorkflowField('active', !workflow.active)}
+                    className={`px-3 py-1 rounded-md font-medium text-sm transition-colors ${
+                    workflow?.active
+                        ? "bg-[#50fa7b] text-[#1e1f29] hover:bg-[#3ce868]"
+                        : "bg-gray-600 text-gray-200 hover:bg-gray-500"
+                    }`}
+                >
+                    {workflow.active ? "Active" : "Inactive"}
+                </button>
+
+                <button
+                    className={`px-3 py-1 rounded-md font-medium text-sm transition-colors bg-yellow-400 text-[#1e1f29] hover:bg-yellow-800`}
+                >
+                    Save Changes
+                </button>
             </div>
         </header>
     );
