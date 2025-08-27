@@ -1,16 +1,25 @@
 import { FiArrowLeft } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 import useFlowContentStore from "@Composer/store/flow/content";
 
 export default function FlowHeader() {
     const { workflow, updateWorkflowField } = useFlowContentStore();
+    const navigate = useNavigate();
     
     if (!workflow) return <></>
+
+    const backButton = () => {
+        navigate(`/`);
+    };
 
     return (
         <header className="w-full bg-[#1e1f29] border-b border-[#44475a] px-4 py-4 flex items-center justify-between">
             <div className="flex items-center space-x-8">
-            <button className="flex items-center space-x-1 text-gray-300 hover:text-white">
+            <button
+                className="flex items-center space-x-1 text-gray-300 hover:text-white"
+                onClick={backButton}
+            >
                 <FiArrowLeft size={24} />
             </button>
 
