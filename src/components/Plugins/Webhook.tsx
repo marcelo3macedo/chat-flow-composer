@@ -7,7 +7,7 @@ export function WebhookNode() {
   return (
     <BaseNode
       icon={GlobeAltIcon}
-      type='manually'
+      type='webhook'
       title="Webhook"
       description="Receives an request"
       handleType="source-only"
