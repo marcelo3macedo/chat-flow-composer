@@ -16,6 +16,7 @@ const useFlowContentStore = create<WorkflowContentState>()(
           id: uuid(),
           name,
           version: 1,
+          active: true,
           nodes: initialNodes,
           edges: [],
           createdAt: new Date().toISOString(),
@@ -25,8 +26,22 @@ const useFlowContentStore = create<WorkflowContentState>()(
       },
 
       getWorkflow: () => {
-        return get().workflow;        
-      }
+        return get().workflow;
+      },
+
+      updateWorkflowField: <K extends keyof WorkflowContent>(
+        key: K,
+        value: WorkflowContent[K]
+      ) => {
+        const workflow = get().workflow;
+        if (!workflow) return;
+        set(() => ({
+          workflow: {
+            ...workflow,
+            [key]: value,
+          },
+        }));
+      },
     }),
     { name: 'flow-content-storage' }
   )
