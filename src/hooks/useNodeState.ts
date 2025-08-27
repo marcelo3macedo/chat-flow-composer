@@ -1,17 +1,22 @@
-import useFlowContent from "@Composer/store/flow/content";
+import useFlowContentStore from "@Composer/store/flow/content";
 
 import type { Edge, Node } from "@xyflow/react";
 
 export function useNodeState() {
-  const add = (node: Node, edge: Edge | undefined) => {
-    const { nodes, edges } = useFlowContent.getState();
-    const filteredNodes = nodes.filter(node => node.type !== 'initial');
+  const add = (node: Node, edge?: Edge) => {
+    const { workflow } = useFlowContentStore.getState();
+    if (!workflow) return;
 
-    useFlowContent.setState({
+    const filteredNodes = workflow.nodes.filter((n) => n.type !== "initial");
+
+    useFlowContentStore.setState({
+      workflow: {
+        ...workflow,
         nodes: [...filteredNodes, node],
-        edges: edge ? [...edges, edge] : edges
+        edges: edge ? [...workflow.edges, edge] : workflow.edges,
+      },
     });
-  }
+  };
 
   return { add };
 }

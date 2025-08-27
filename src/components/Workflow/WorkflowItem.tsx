@@ -1,16 +1,13 @@
 import { Switch } from '@headlessui/react';
 import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
 
 import type { Workflow } from "@Composer/interfaces/Workflow";
 
 const WorkflowItem = ({ workflow }: { workflow: Workflow}) => {
   const [enabled, setEnabled] = useState(workflow.enabled);
-  const navigate = useNavigate();
-
+  
   return (
     <div
-      onClick={() => navigate(`/flow/${workflow.id}`)}
       className="bg-[#282a36] p-6 rounded-lg shadow-md border border-[#44475a] flex items-center justify-between transition-all duration-300 hover:bg-[#44475a] hover:cursor-pointer"
     >
       <div className="flex-1">

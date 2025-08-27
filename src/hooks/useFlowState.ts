@@ -1,12 +1,12 @@
 import { type NodeChange, type EdgeChange, type Connection, type FinalConnectionState } from '@xyflow/react';
 import { useCallback } from 'react';
 
-import useFlowContent from '@Composer/store/flow/content';
+import useFlowContentStore from '@Composer/store/flow/content';
 
 import { useConnectState } from './useConnectState';
 
 export function useFlowState() {
-  const { nodes, edges } = useFlowContent();
+  const { workflow } = useFlowContentStore();
   const { connectionEnded } = useConnectState();
 
   const onNodesChange = useCallback(
@@ -25,5 +25,5 @@ export function useFlowState() {
     connectionEnded(event, params);
   }, [connectionEnded]);
 
-  return { nodes, edges, onNodesChange, onEdgesChange, onConnect, onConnectEnd };
+  return { workflow, onNodesChange, onEdgesChange, onConnect, onConnectEnd };
 }

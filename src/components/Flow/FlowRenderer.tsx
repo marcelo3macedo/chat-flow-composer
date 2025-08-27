@@ -5,18 +5,19 @@ import { nodeTypes } from '../Plugins';
 
 export default function FlowRenderer() {
   const {
-    nodes,
-    edges,
+    workflow,
     onNodesChange,
     onEdgesChange,
     onConnect,
     onConnectEnd,
   } = useFlowState();
+
+  if (!workflow) return <></>
   
   return (
     <ReactFlow
-      nodes={nodes}
-      edges={edges}
+      nodes={workflow.nodes}
+      edges={workflow.edges}
       nodeTypes={nodeTypes}
       onNodesChange={onNodesChange}
       onEdgesChange={onEdgesChange}
