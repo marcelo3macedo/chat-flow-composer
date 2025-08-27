@@ -1,10 +1,14 @@
+import useFlowContentStore from "@Composer/store/flow/content";
+
 import mockWorkflows from "../assets/mocks/workflows.json";
 
-export async function fetchWorkflows() {
-    // REMOVE
+export const workflowService = {
+  list: async () => {
     await new Promise(resolve => setTimeout(resolve, 1000));
-  
-    // const response = await fetch("/api/workflows");
-  
     return mockWorkflows;
-}
+  },
+
+  create: () => {
+    return useFlowContentStore.getState().createWorkflow();
+  },
+};

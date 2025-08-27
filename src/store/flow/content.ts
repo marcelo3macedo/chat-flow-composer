@@ -1,15 +1,50 @@
+import { v4 as uuid } from 'uuid';
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 
-import type { ContentState } from '../../interfaces/Flow';
-import type { Node } from '@xyflow/react';
+import type { WorkflowContent, WorkflowContentState } from '@Composer/interfaces/Workflow';
+import { generateInitialNode } from '@Composer/shared/utils/nodeUtils';
 
-const initialNodes = [
-  { id: 'n1', type: 'initial', position: { x: 0, y: 0 }, data: { label: 'Node 1' } }
-] as Node[];
+const useFlowContentStore = create<WorkflowContentState>()(
+  persist(
+    (set, get) => ({
+      workflow: null,
 
-const useFlowContent = create<ContentState>(() => ({
-  nodes: initialNodes,
-  edges: []
-}));
+      createWorkflow: (name = 'Untitled') => {
+        const initialNodes = generateInitialNode();
+        const newWf: WorkflowContent = {
+          id: uuid(),
+          name,
+          version: 1,
+          active: true,
+          nodes: initialNodes,
+          edges: [],
+          createdAt: new Date().toISOString(),
+        };
+        set(() => ({ workflow: newWf }));
+        return newWf;
+      },
 
-export default useFlowContent;
+      getWorkflow: () => {
+        return get().workflow;
+      },
+
+      updateWorkflowField: <K extends keyof WorkflowContent>(
+        key: K,
+        value: WorkflowContent[K]
+      ) => {
+        const workflow = get().workflow;
+        if (!workflow) return;
+        set(() => ({
+          workflow: {
+            ...workflow,
+            [key]: value,
+          },
+        }));
+      },
+    }),
+    { name: 'flow-content-storage' }
+  )
+);
+
+export default useFlowContentStore;
