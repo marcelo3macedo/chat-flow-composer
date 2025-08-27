@@ -14,7 +14,7 @@ export default function FlowHeader() {
     };
 
     return (
-        <header className="w-full bg-[#1e1f29] border-b border-[#44475a] px-4 py-4 flex items-center justify-between">
+        <header className="fixed top-0 left-0 z-10 w-full bg-[#1e1f29] border-b border-[#44475a] px-4 py-4 flex items-center justify-between">
             <div className="flex items-center space-x-8">
             <button
                 className="flex items-center space-x-1 text-gray-300 hover:text-white"
