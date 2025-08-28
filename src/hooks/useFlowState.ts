@@ -1,4 +1,4 @@
-import { type NodeChange, type EdgeChange, type Connection, type FinalConnectionState, applyNodeChanges, applyEdgeChanges, addEdge, type Edge } from '@xyflow/react';
+import { type NodeChange, type EdgeChange, type Connection, type FinalConnectionState, applyNodeChanges, applyEdgeChanges, addEdge } from '@xyflow/react';
 import { useCallback } from 'react';
 
 import useFlowContentStore from '@Composer/store/flow/content';
