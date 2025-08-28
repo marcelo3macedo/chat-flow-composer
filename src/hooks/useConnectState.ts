@@ -11,6 +11,8 @@ export function useConnectState() {
     const { screenToFlowPosition } = useReactFlow();
 
     const connectionEnded = (event: MouseEvent | TouchEvent, params: FinalConnectionState) => {
+        if (params.toHandle || params.toNode) return
+        
         setSelected('new-node');
         setActiveGroup(undefined);
 

@@ -1,6 +1,7 @@
 import { Controls, MiniMap, ReactFlow } from '@xyflow/react';
 
 import { useFlowState } from '../../hooks/useFlowState';
+import { edgeTypes } from '../Edge';
 import { nodeTypes } from '../Plugins';
 
 export default function FlowRenderer() {
@@ -19,6 +20,7 @@ export default function FlowRenderer() {
       nodes={workflow.nodes}
       edges={workflow.edges}
       nodeTypes={nodeTypes}
+      edgeTypes={edgeTypes}
       onNodesChange={onNodesChange}
       onEdgesChange={onEdgesChange}
       onConnect={onConnect}
