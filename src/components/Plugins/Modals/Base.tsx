@@ -1,6 +1,7 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import type { ModalProps } from "../../../interfaces/Plugin";
-import useModalStore from "../../../store/flow/modal";
+
+import type { ModalProps } from "@Composer/interfaces/Plugin";
+import useModalStore from "@Composer/store/flow/modal";
 
 export function Modal({ Icon, isOpen, title, children }: ModalProps) {
   const setSelected = useModalStore(state => state.setSelected);

@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+
 import type { MenuState, NodesMenuState } from '../../interfaces/Node';
 
 const defaultMenu = [{

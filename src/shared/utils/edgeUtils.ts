@@ -6,6 +6,7 @@ export function generateEdgeByType(finalState: FinalConnectionState | null, node
     return {
         id: `${finalState?.fromNode?.id}:${node.id}`,
         source: finalState?.fromNode?.id,
-        target: node.id
+        target: node.id,
+        type: 'custom-edge'
     } as Edge
 }

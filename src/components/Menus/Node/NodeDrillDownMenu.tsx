@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
-import useNodesMenuStore from "../../../store/nodes/menu";
-import { getIconByName } from "../../../shared/ui/icons";
-import { useMenuState } from "../../../hooks/useMenuState";
+
+import { useMenuState } from "@Composer/hooks/useMenuState";
+import { getIconByName } from "@Composer/shared/ui/icons";
+import useNodesMenuStore from "@Composer/store/nodes/menu";
 
 export default function NodeDrillDownMenu() {
   const { menu, activeGroup, setActiveGroup }  = useNodesMenuStore();

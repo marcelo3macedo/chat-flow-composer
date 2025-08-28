@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { fetchWorkflows } from '../services/workflowService';
+
+import { workflowService } from '@Composer/services/workflowService';
 
 const useWorkflows = () => {
   const [workflows, setWorkflows] = useState([]);
@@ -7,21 +8,21 @@ const useWorkflows = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const load = async () => {
-      try {
-        setIsLoading(true);
-        const data:any = await fetchWorkflows();
-        setWorkflows(data);
-
-      } catch (err:any) {
-        setError(err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
     load();
   }, []);
+
+  const load = async () => {
+    try {
+      setIsLoading(true);
+      const data:any = await workflowService.list();
+      setWorkflows(data);
+
+    } catch (err:any) {
+      setError(err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return { workflows, isLoading, error };
 };

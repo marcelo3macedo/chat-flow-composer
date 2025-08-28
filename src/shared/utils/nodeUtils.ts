@@ -23,3 +23,9 @@ export function generateNodeByType(type: string, finalState: FinalConnectionStat
 
   return newNode;
 }
+
+export function generateInitialNode() {
+  return [
+    { id: 'n1', type: 'initial', position: { x: 0, y: 0 }, data: { label: 'Initial Node' } }
+  ]
+}

@@ -1,4 +1,5 @@
 import { PlayIcon } from "@heroicons/react/20/solid";
+
 import { BaseNode } from "./Base";
 
 export function ManuallyNode() {

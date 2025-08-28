@@ -1,6 +1,7 @@
-import type { ModalActions } from "../../../interfaces/Plugin";
+import type { ModalActions } from "@Composer/interfaces/Plugin";
+import { icons } from "@Composer/shared/ui/icons";
+
 import { Modal } from "./Base";
-import { icons } from "../../../shared/ui/icons";
 
 export function MessageModal({ open }: ModalActions) {
   return (

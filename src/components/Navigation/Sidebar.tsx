@@ -1,4 +1,4 @@
-import { getMenu } from "../../services/navigateService";
+import { getMenu } from "@Composer/services/navigateService";
 
 const Sidebar = () => {
   const navItems = getMenu();

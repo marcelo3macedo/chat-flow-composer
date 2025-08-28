@@ -1,5 +1,6 @@
+import { icons } from "@Composer/shared/ui/icons";
+
 import { BaseNode } from "./Base";
-import { icons } from "../../shared/ui/icons";
 
 export function MessageNode() {
   return (

@@ -1,4 +1,5 @@
-import { icons } from "../../shared/ui/icons";
+import { icons } from "@Composer/shared/ui/icons";
+
 import { BaseNode } from "./Base";
 
 export function VariablesNode() {

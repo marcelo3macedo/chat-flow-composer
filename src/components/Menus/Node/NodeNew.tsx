@@ -1,4 +1,5 @@
-import useModalStore from "../../../store/flow/modal";
+import useModalStore from "@Composer/store/flow/modal";
+
 import NodeDrillDownMenu from "./NodeDrillDownMenu";
 import { NodeSearch } from "./NodeSearch";
 

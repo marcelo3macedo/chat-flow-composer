@@ -1,6 +1,7 @@
 import { Handle, Position } from "@xyflow/react";
-import type { BaseNodeProps } from "../../interfaces/Plugin";
-import useModalStore from "../../store/flow/modal";
+
+import type { BaseNodeProps } from "@Composer/interfaces/Plugin";
+import useModalStore from "@Composer/store/flow/modal";
 
 export function BaseNode({
   icon: Icon,

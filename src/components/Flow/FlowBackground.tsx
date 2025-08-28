@@ -1,17 +1,18 @@
-import type { FlowBackgroundProps } from "../../interfaces/Flow";
-import useBackgroundStore from "../../store/flow/background";
+import type { FlowBackgroundProps } from '@Composer/interfaces/Flow';
+import useBackgroundStore from '@Composer/store/flow/background';
 import '@xyflow/react/dist/style.css';
 
 export default function FlowBackground({ children }:FlowBackgroundProps) {
   const backgroundImage = useBackgroundStore(state => state.backgroundImage);
-
+  const baseUrl = import.meta.env.VITE_BASE_URL;
+  
   return (
     <div style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden' }}>
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: `url(${backgroundImage})`,
+          backgroundImage: `url(${baseUrl}${backgroundImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           opacity: 1,

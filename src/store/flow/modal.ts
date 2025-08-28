@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+
 import type { ModalState } from '../../interfaces/Flow';
 
 const useModalStore = create<ModalState>((set) => ({
