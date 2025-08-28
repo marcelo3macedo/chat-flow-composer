@@ -1,3 +1,4 @@
+import { GithubNode } from "./Github";
 import { InitialNode } from "./Initial";
 import { ManuallyNode } from "./Manually";
 import { MessageNode } from "./Message";
@@ -11,5 +12,6 @@ export const nodeTypes = {
   request: RequestNode,
   initial: InitialNode,
   variables: VariablesNode,
-  webhook: WebhookNode
+  webhook: WebhookNode,
+  github: GithubNode
 };

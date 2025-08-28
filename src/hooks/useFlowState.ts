@@ -23,7 +23,12 @@ export function useFlowState() {
 
   const onConnect = (connection: Connection) => {
     if (!workflow) return;
-    const newEdges = addEdge(connection, workflow.edges);
+
+    const newConnection = {
+      ...connection,
+      type: 'custom-edge',
+    };
+    const newEdges = addEdge(newConnection, workflow.edges);
     updateWorkflowField('edges', newEdges);
   };
 
