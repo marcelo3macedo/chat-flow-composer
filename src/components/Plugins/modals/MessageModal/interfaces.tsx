@@ -1,0 +1,1 @@
+export type MessageType = "text" | "audio" | "document" | "image";

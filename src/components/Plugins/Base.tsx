@@ -14,11 +14,13 @@ export function BaseNode({
   selected,
   props
 }: BaseNodeProps) {
-  const setSelected = useModalStore(state => state.setSelected);
+  const { setSelected, setProps } = useModalStore(state => state);
   const onClick = () => {
     if (!selected) return;
 
     setSelected(props?.type || 'initial');
+
+    if (props) setProps(props);
   }
 
   return (

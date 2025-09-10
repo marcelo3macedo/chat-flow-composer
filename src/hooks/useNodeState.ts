@@ -39,5 +39,28 @@ export function useNodeState() {
     });
   };
 
-  return { add, remove };
+  const updateNode = (id: string, data: any) => {
+    const { workflow } = useFlowContentStore.getState();
+    if (!workflow) return;
+
+    useFlowContentStore.setState({
+      workflow: {
+        ...workflow,
+        nodes: workflow.nodes.map((node) =>
+          node.id === id
+            ? {
+                ...node,
+                data: {
+                  ...node.data,
+                  ...data,
+                },
+              }
+            : node
+        ),
+      },
+    });
+  };
+
+
+  return { add, remove, updateNode };
 }
