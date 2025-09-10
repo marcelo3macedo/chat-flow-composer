@@ -2,7 +2,7 @@ import { XCircleIcon } from "@heroicons/react/20/solid";
 import { EdgeLabelRenderer, useReactFlow } from "@xyflow/react";
 import { useEffect, useState } from "react";
 
-import ConfirmationModal from "./ConfirmationModal";
+import ConfirmationModal from "../../../shared/ui/modals/ConfirmationModal";
 
 const foreignObjectSize = 40;
 
