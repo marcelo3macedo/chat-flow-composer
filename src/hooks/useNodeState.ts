@@ -1,8 +1,11 @@
+import { generateInitialNode } from "@Composer/shared/utils/nodeUtils";
 import useFlowContentStore from "@Composer/store/flow/content";
 
 import type { Edge, Node } from "@xyflow/react";
 
 export function useNodeState() {
+  const initialNodes = generateInitialNode();
+
   const add = (node: Node, edge?: Edge) => {
     const { workflow } = useFlowContentStore.getState();
     if (!workflow) return;
@@ -18,5 +21,46 @@ export function useNodeState() {
     });
   };
 
-  return { add };
+  const remove = (nodeId: string) => {
+    const { workflow } = useFlowContentStore.getState();
+    if (!workflow) return;
+
+    const nodeFiltered = workflow.nodes.filter((n) => n.id !== nodeId);
+    const nodes = (nodeFiltered.length === 0) ? initialNodes : nodeFiltered;
+    
+    useFlowContentStore.setState({
+      workflow: {
+        ...workflow,
+        nodes: nodes,
+        edges: workflow.edges.filter(
+          (e) => e.source !== nodeId && e.target !== nodeId
+        ),
+      },
+    });
+  };
+
+  const updateNode = (id: string, data: any) => {
+    const { workflow } = useFlowContentStore.getState();
+    if (!workflow) return;
+
+    useFlowContentStore.setState({
+      workflow: {
+        ...workflow,
+        nodes: workflow.nodes.map((node) =>
+          node.id === id
+            ? {
+                ...node,
+                data: {
+                  ...node.data,
+                  ...data,
+                },
+              }
+            : node
+        ),
+      },
+    });
+  };
+
+
+  return { add, remove, updateNode };
 }

@@ -1,5 +1,5 @@
 import { Menus } from "../Menus";
-import { Modals } from "../Plugins/Modals";
+import { Modals } from "../Plugins/modals";
 
 export default function Resources() {
     return (

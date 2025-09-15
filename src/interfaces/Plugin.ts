@@ -1,3 +1,4 @@
+import type { NodeProps } from "@xyflow/react";
 import type { ElementType, ReactNode } from "react";
 
 export interface BaseNodeProps {
@@ -6,7 +7,9 @@ export interface BaseNodeProps {
   type?: ModalType;
   description: string;
   handleType?: HandleType;
+  props?: NodeProps;
   onClick?: () => void;
+  selected?: boolean;
 }
 
 export type HandleType = 'source-only' | 'source-target';
