@@ -1,6 +1,6 @@
 import { PlusCircleIcon } from "@heroicons/react/24/outline";
 
-import { BaseInitialNode } from "./BaseInitial";
+import { BaseInitialNode } from "../../BaseInitial";
 
 export function InitialNode() {
   return (

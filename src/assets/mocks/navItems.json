@@ -4,11 +4,5 @@
     "icon": "FiGitPullRequest",
     "href": "#",
     "active": true
-  },
-  {
-    "label": "Configs",
-    "icon": "FiSettings",
-    "href": "#",
-    "active": false
   }
 ]

@@ -3,48 +3,79 @@
         "name": "Actions",
         "description": "Execute tasks manually or via triggers.",
         "items": [
-        {
-            "name": "Manual",
-            "description": "Start flow manually.",
-            "type": "manually"
-        },
-        {
-            "name": "Webhook",
-            "description": "Trigger via HTTP request.",
-            "type": "webhook"
-        }
+            {
+                "name": "Manual",
+                "description": "Start flow manually.",
+                "type": "manually"
+            },
+            {
+                "name": "Webhook",
+                "description": "Trigger via HTTP request.",
+                "type": "webhook"
+            }
         ]
     },
     {
         "name": "Integrations",
         "description": "Connect with external platforms.",
         "items": [
-        {
-            "name": "Github",
-            "description": "React to GitHub events.",
-            "type": "github"
-        }
+            {
+                "name": "Github",
+                "description": "React to GitHub events.",
+                "type": "github"
+            }
         ]
     },
     {
         "name": "Interactions",
         "description": "Handle messages, requests, and variables.",
         "items": [
-        {
-            "name": "Message",
-            "description": "Send or show a message.",
-            "type": "message"
-        },
-        {
-            "name": "Request",
-            "description": "Make HTTP requests.",
-            "type": "request"
-        },
-        {
-            "name": "Variables",
-            "description": "Set or update variables.",
-            "type": "variables"
-        }
+            {
+                "name": "Message",
+                "description": "Send or show a message.",
+                "type": "message"
+            },
+            {
+                "name": "Request",
+                "description": "Make HTTP requests.",
+                "type": "request"
+            },
+            {
+                "name": "Variables",
+                "description": "Set or update variables.",
+                "type": "variables"
+            }
+        ]
+    },
+    {
+        "name": "Messenger",
+        "description": "Connect with messenger platforms.",
+        "items": [
+            {
+                "name": "Instagram",
+                "description": "Send message and events.",
+                "type": "instagram"
+            },
+            {
+                "name": "Mail",
+                "description": "Send an email.",
+                "type": "mail"
+            },
+            {
+                "name": "Messenger",
+                "description": "Interacts with messenger.",
+                "type": "messenger"
+            },
+            {
+                "name": "Telegram",
+                "description": "Connects with Telegram.",
+                "type": "telegram"
+            },
+            {
+                "name": "Whatsapp",
+                "description": "Send message in Whatsapp.",
+                "type": "whatsapp"
+            }
         ]
     }
 ]
