@@ -18,15 +18,15 @@ export function RequestModal({ open }: ModalActions) {
   const [requestData, setRequestData] = useState<RequestData>(initialObj);
 
   useEffect(() => {
-    if (props?.request) {
-      setRequestData(props.request);
+    if ((props as any)?.request) {
+      setRequestData((props as any).request);
     }
-  }, [props?.request]);
+  }, [(props as any)?.request]);
 
   const handleUpdate = (updates: Partial<RequestData>) => {
     setRequestData((prevData) => {
-      const newData = { ...prevData, ...updates };
-      updateProps({ request: newData });
+      const newData = { ...prevData, ...updates } as any;
+      updateProps({ data: { request: newData } });
       return newData;
     });
   };
