@@ -11,4 +11,8 @@ export const workflowService = {
   create: () => {
     return useFlowContentStore.getState().createWorkflow();
   },
+
+  set: (workflow: any) => {
+    return useFlowContentStore.getState().setWorkflow(workflow);
+  },
 };

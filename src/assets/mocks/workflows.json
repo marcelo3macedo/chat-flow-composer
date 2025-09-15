@@ -1,26 +1,178 @@
 [
   {
-    "id": "1",
-    "name": "Backup de Dados diário",
-    "tags": ["backup", "cloud"],
-    "enabled": true
+    "id": "f9827273-165d-4d2f-81a2-d083f0bff16f",
+    "name": "Send message in Whatsapp",
+    "tags": ["whatsapp", "messenger"],
+    "version": 1,
+    "active": true,
+    "nodes": [
+      {
+        "id": "f89b1ae5-1c8a-4dd9-9468-8a5a869e83b0",
+        "type": "webhook",
+        "position": {
+          "x": -218,
+          "y": -24
+        },
+        "data": {},
+        "measured": {
+          "width": 77,
+          "height": 95
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "73630f92-8377-4517-a6af-58d33ada246f",
+        "type": "variables",
+        "position": {
+          "x": -63,
+          "y": -25.25
+        },
+        "data": {
+          "variables": [
+            {
+              "id": "1",
+              "title": "receiver",
+              "value": "551499068910"
+            },
+            {
+              "id": "1757945334850",
+              "title": "message",
+              "value": "Olá"
+            }
+          ]
+        },
+        "measured": {
+          "width": 85,
+          "height": 95
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "5b1ae94c-f69e-4d84-ab21-51b11ef7773f",
+        "type": "whatsapp",
+        "position": {
+          "x": 88,
+          "y": -27.25
+        },
+        "data": {
+          "whatsapp": {
+            "phoneNumber": "551499068910",
+            "message": "Olá"
+          }
+        },
+        "measured": {
+          "width": 99,
+          "height": 95
+        },
+        "selected": false,
+        "dragging": false
+      }
+    ],
+    "edges": [
+      {
+        "id": "f89b1ae5-1c8a-4dd9-9468-8a5a869e83b0:73630f92-8377-4517-a6af-58d33ada246f",
+        "source": "f89b1ae5-1c8a-4dd9-9468-8a5a869e83b0",
+        "target": "73630f92-8377-4517-a6af-58d33ada246f",
+        "type": "custom-edge"
+      },
+      {
+        "id": "73630f92-8377-4517-a6af-58d33ada246f:5b1ae94c-f69e-4d84-ab21-51b11ef7773f",
+        "source": "73630f92-8377-4517-a6af-58d33ada246f",
+        "target": "5b1ae94c-f69e-4d84-ab21-51b11ef7773f",
+        "type": "custom-edge"
+      }
+    ],
+    "createdAt": "2025-09-15T14:08:10.650Z"
   },
   {
-    "id": "2",
-    "name": "Notificação de novo usuário",
-    "tags": ["email", "automação"],
-    "enabled": true
-  },
-  {
-    "id": "3",
-    "name": "Processamento de faturas",
-    "tags": ["faturamento", "financeiro"],
-    "enabled": false
-  },
-  {
-    "id": "4",
-    "name": "Análise de métricas do site",
-    "tags": ["dados", "análise", "relatório"],
-    "enabled": true
+    "id": "7b14836a-438e-4249-99c7-cfc513e4736c",
+    "name": "Send an mail",
+    "version": 1,
+    "tags": ["mail", "messenger"],
+    "active": true,
+    "nodes": [
+      {
+        "id": "6d58af8f-76e3-4960-9780-67d8479b667d",
+        "type": "webhook",
+        "position": {
+          "x": -209.5,
+          "y": -4
+        },
+        "data": {},
+        "measured": {
+          "width": 77,
+          "height": 95
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "56722999-4f50-4cca-9a2e-faa322009258",
+        "type": "mail",
+        "position": {
+          "x": 112,
+          "y": -2.25
+        },
+        "data": {
+          "mail": {
+            "to": "fulano@gmail.com",
+            "subject": "Title",
+            "message": "message"
+          }
+        },
+        "measured": {
+          "width": 68,
+          "height": 95
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "id": "dcf99a95-65b5-4522-b250-d25e5bcdade0",
+        "type": "request",
+        "position": {
+          "x": -57.5,
+          "y": -3.25
+        },
+        "data": {
+          "request": {
+            "url": "https://myapi.com.br/get",
+            "type": "GET",
+            "headers": [
+              {
+                "id": "1757945951619",
+                "key": "",
+                "value": ""
+              }
+            ],
+            "body": "",
+            "resultVariable": "response"
+          }
+        },
+        "measured": {
+          "width": 84,
+          "height": 95
+        },
+        "selected": false,
+        "dragging": false
+      }
+    ],
+    "edges": [
+      {
+        "id": "6d58af8f-76e3-4960-9780-67d8479b667d:dcf99a95-65b5-4522-b250-d25e5bcdade0",
+        "source": "6d58af8f-76e3-4960-9780-67d8479b667d",
+        "target": "dcf99a95-65b5-4522-b250-d25e5bcdade0",
+        "type": "custom-edge"
+      },
+      {
+        "source": "dcf99a95-65b5-4522-b250-d25e5bcdade0",
+        "target": "56722999-4f50-4cca-9a2e-faa322009258",
+        "type": "custom-edge",
+        "id": "xy-edge__dcf99a95-65b5-4522-b250-d25e5bcdade0-56722999-4f50-4cca-9a2e-faa322009258"
+      }
+    ],
+    "createdAt": "2025-09-15T14:21:08.419Z"
   }
 ]

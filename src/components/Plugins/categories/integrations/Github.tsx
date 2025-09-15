@@ -1,6 +1,6 @@
 import { FaGithub } from "react-icons/fa";
 
-import { BaseNode } from "./Base";
+import { BaseNode } from "../../Base";
 
 import type { NodeProps } from "@xyflow/react";
 

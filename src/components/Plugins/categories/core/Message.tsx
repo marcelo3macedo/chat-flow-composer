@@ -1,6 +1,6 @@
 import { icons } from "@Composer/shared/ui/icons";
 
-import { BaseNode } from "./Base";
+import { BaseNode } from "../../Base";
 
 import type { NodeProps } from "@xyflow/react";
 

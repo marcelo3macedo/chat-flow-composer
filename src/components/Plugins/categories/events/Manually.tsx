@@ -1,6 +1,6 @@
 import { PlayIcon } from "@heroicons/react/20/solid";
 
-import { BaseNode } from "./Base";
+import { BaseNode } from "../../Base";
 
 import type { NodeProps } from "@xyflow/react";
 

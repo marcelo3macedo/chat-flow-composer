@@ -29,6 +29,10 @@ const useFlowContentStore = create<WorkflowContentState>()(
         return get().workflow;
       },
 
+      setWorkflow: (workflow: any) => {
+        set(() => ({ workflow }));
+      },
+
       updateWorkflowField: <K extends keyof WorkflowContent>(
         key: K,
         value: WorkflowContent[K]

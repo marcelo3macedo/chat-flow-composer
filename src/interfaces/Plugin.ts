@@ -25,4 +25,4 @@ export interface ModalActions {
   open: boolean;
 }
 
-export type ModalType = 'message' | 'request' | 'initial' | 'variables' | 'manually' | 'webhook' | 'github';
+export type ModalType = 'messenger' | 'whatsapp' | 'telegram' | 'message' | 'request' | 'initial' | 'variables' | 'manually' | 'webhook' | 'github' | 'instagram' | 'mail';
