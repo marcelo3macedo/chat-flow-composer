@@ -32,7 +32,12 @@ export function RequestModal({ open }: ModalActions) {
   };
 
   return (
-    <Modal isOpen={open} title="Request" Icon={icons.REQUEST}>
+    <Modal
+      isOpen={open}
+      title="Request"
+      Icon={icons.REQUEST}
+      description="Faz uma chamada HTTP para um serviço externo. A resposta pode ser salva em uma variável e reaproveitada nas próximas caixinhas."
+    >
       <form className="space-y-4">
         <Endpoint
           data={requestData}

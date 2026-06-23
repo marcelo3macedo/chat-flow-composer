@@ -39,7 +39,12 @@ export function MailModal({ open }: ModalActions) {
   };
 
   return (
-    <Modal isOpen={open} title="Send Email" Icon={icons.MESSAGE}>
+    <Modal
+      isOpen={open}
+      title="Send Email"
+      Icon={icons.MESSAGE}
+      description="Envia um e-mail para o endereço informado quando o fluxo passar por aqui."
+    >
       <div className="space-y-4">
         <div>
           <label

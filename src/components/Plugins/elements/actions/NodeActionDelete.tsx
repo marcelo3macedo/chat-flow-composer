@@ -1,4 +1,4 @@
-import { XCircleIcon } from "@heroicons/react/20/solid";
+import { TrashIcon } from "@heroicons/react/24/outline";
 
 import { useNodeActionsState } from "@Composer/hooks/nodes/useNodeActionsState";
 import ConfirmationModal from "@Composer/shared/ui/modals/ConfirmationModal";
@@ -12,8 +12,8 @@ export function NodeActionDelete({ props }: { props?: NodeProps }) {
 
     return (
         <div>
-            <XCircleIcon    
-                className="w-4 h-4 text-gray-400 bg-white rounded-2xl hover:cursor-pointer"
+            <TrashIcon    
+                className="w-2.5 h-2.5 text-gray-400 hover:text-red-500 cursor-pointer transition-colors"
                 onClick={removeIconClick}
             />
             {showConfirm && (

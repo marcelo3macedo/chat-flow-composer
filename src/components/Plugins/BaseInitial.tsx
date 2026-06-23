@@ -6,24 +6,30 @@ export function BaseInitialNode({
   title,
   description,
 }: BaseNodeProps) {
-  const { initialMenu } = useMenuState()
+  const { initialMenu } = useMenuState();
   const onClick = () => {
-    initialMenu()
-  }
+    initialMenu();
+  };
 
   return (
-    <div className="flex flex-col items-center" onClick={onClick}>
-      <div className="
-        relative border border-gray-700  border-dashed rounded-lg shadow-sm 
-        p-2 flex items-center justify-center
-      ">
-        <div className="p-2 rounded-md">
-          <Icon className="h-8 w-8 text-gray-700" />
-        </div>
+    <div 
+      onClick={onClick}
+      className="relative flex flex-col w-[180px] rounded-lg border border-dashed border-[#44475a]/40 bg-[#1e1f29]/30 text-[#f8f8f2] shadow-sm transition-all duration-200 cursor-pointer hover:border-[#6272a4]/75"
+    >
+      {/* Header: Icon + Node Type */}
+      <div className="flex items-center gap-1 border-b border-dashed border-[#44475a]/30 bg-gray-500/5 px-2 py-0.5 rounded-t-lg">
+        <Icon className="h-3.5 w-3.5 text-gray-500 shrink-0" />
+        <span className="text-[8.5px] font-semibold uppercase tracking-wider text-gray-500">
+          {title}
+        </span>
       </div>
 
-      <p className="text-sm font-semibold text-gray-800">{title}</p>
-      <p className="text-xs text-gray-500 text-center leading-tight">{description}</p>
+      {/* Content area */}
+      <div className="px-2 py-1.5 bg-[#282a36]/20 rounded-b-lg flex flex-col justify-center min-h-[2.5rem]">
+        <p className="text-[9px] leading-normal text-gray-500 text-left">
+          {description}
+        </p>
+      </div>
     </div>
   );
 }

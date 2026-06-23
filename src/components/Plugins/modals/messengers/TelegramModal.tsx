@@ -37,7 +37,12 @@ export function TelegramModal({ open }: ModalActions) {
   };
 
   return (
-    <Modal isOpen={open} title="Send Telegram Message" Icon={icons.MESSAGE}>
+    <Modal
+      isOpen={open}
+      title="Send Telegram Message"
+      Icon={icons.MESSAGE}
+      description="Envia uma mensagem para um chat do Telegram quando o fluxo passar por aqui."
+    >
       <div className="space-y-4">
         <div>
           <label

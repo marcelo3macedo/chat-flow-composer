@@ -37,7 +37,12 @@ export function InstagramModal({ open }: ModalActions) {
   };
 
   return (
-    <Modal isOpen={open} title="Send Instagram Message" Icon={icons.MESSAGE}>
+    <Modal
+      isOpen={open}
+      title="Send Instagram Message"
+      Icon={icons.MESSAGE}
+      description="Envia uma mensagem direta para um usuário do Instagram quando o fluxo passar por aqui."
+    >
       <div className="space-y-4">
         <div>
           <label

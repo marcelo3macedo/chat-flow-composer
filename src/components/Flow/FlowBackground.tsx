@@ -7,7 +7,7 @@ export default function FlowBackground({ children }:FlowBackgroundProps) {
   const baseUrl = import.meta.env.VITE_BASE_URL;
   
   return (
-    <div style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden' }}>
+    <div style={{ position: 'relative', width: '100%', height: '100vh', overflow: 'hidden', background: "#000" }}>
       <div
         style={{
           position: 'absolute',
@@ -15,7 +15,7 @@ export default function FlowBackground({ children }:FlowBackgroundProps) {
           backgroundImage: `url(${baseUrl}${backgroundImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: 1,
+          opacity: 0.4,
           zIndex: 0,
         }}
       />

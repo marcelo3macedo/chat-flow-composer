@@ -43,7 +43,12 @@ export function MessageModal({ open }: ModalActions) {
   ];
 
   return (
-    <Modal isOpen={open} title="Message" Icon={icons.MESSAGE}>
+    <Modal
+      isOpen={open}
+      title="Message"
+      Icon={icons.MESSAGE}
+      description="Define o conteúdo que o chatbot vai enviar ao usuário neste ponto do fluxo."
+    >
       <form className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">Type</label>

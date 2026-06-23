@@ -37,7 +37,12 @@ export function WhatsappModal({ open }: ModalActions) {
   };
 
   return (
-    <Modal isOpen={open} title="Send WhatsApp Message" Icon={icons.MESSAGE}>
+    <Modal
+      isOpen={open}
+      title="Send WhatsApp Message"
+      Icon={icons.MESSAGE}
+      description="Envia uma mensagem para um número de WhatsApp específico quando o fluxo passar por aqui."
+    >
       <div className="space-y-4">
         <div>
           <label htmlFor="phone-number" className="block text-sm font-medium text-gray-700">

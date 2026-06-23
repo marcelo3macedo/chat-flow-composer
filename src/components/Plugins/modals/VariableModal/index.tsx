@@ -24,7 +24,12 @@ export function VariableModal({ open }: ModalActions) {
   };
 
   return (
-    <Modal isOpen={open} title="Variables" Icon={icons.VARIABLES}>
+    <Modal
+      isOpen={open}
+      title="Variables"
+      Icon={icons.VARIABLES}
+      description="Cria ou atualiza variáveis que podem ser reutilizadas em mensagens e condições escrevendo {{nome}}."
+    >
       <div className="space-y-4">
         {variables.map((variable: any) => (
           <div key={variable.id} className="flex items-center space-x-2">

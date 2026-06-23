@@ -44,6 +44,26 @@
                 "name": "Variables",
                 "description": "Set or update variables.",
                 "type": "variables"
+            },
+            {
+                "name": "Question",
+                "description": "Ask the user a question and save the answer.",
+                "type": "question"
+            },
+            {
+                "name": "Condition",
+                "description": "Branch the flow based on a condition.",
+                "type": "condition"
+            },
+            {
+                "name": "Media",
+                "description": "Send an image, video, audio or document.",
+                "type": "media"
+            },
+            {
+                "name": "Transfer operator",
+                "description": "Transfer the conversation to a human agent.",
+                "type": "transfer_operator"
             }
         ]
     },

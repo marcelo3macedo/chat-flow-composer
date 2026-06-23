@@ -9,7 +9,11 @@ export type IconComponent = ForwardRefExoticComponent<
 export const IconKeys = {
   MESSAGE: 'MESSAGE',
   REQUEST: 'REQUEST',
-  VARIABLES: 'VARIABLES'
+  VARIABLES: 'VARIABLES',
+  QUESTION: 'QUESTION',
+  CONDITION: 'CONDITION',
+  TRANSFER_OPERATOR: 'TRANSFER_OPERATOR',
+  MEDIA: 'MEDIA'
 } as const;
 
 export type IconKeys = keyof typeof IconKeys;

@@ -37,7 +37,12 @@ export function MessengerModal({ open }: ModalActions) {
   };
 
   return (
-    <Modal isOpen={open} title="Send Messenger Message" Icon={icons.MESSAGE}>
+    <Modal
+      isOpen={open}
+      title="Send Messenger Message"
+      Icon={icons.MESSAGE}
+      description="Envia uma mensagem para um contato do Facebook Messenger quando o fluxo passar por aqui."
+    >
       <div className="space-y-4">
         <div>
           <label

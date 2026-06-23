@@ -62,5 +62,54 @@ export function useNodeState() {
   };
 
 
-  return { add, remove, updateNode };
+  const clone = (nodeId: string) => {
+    const { workflow } = useFlowContentStore.getState();
+    if (!workflow) return;
+
+    const sourceNode = workflow.nodes.find((n) => n.id === nodeId);
+    if (!sourceNode) return;
+
+    const clonedNode: Node = {
+      ...sourceNode,
+      id: crypto.randomUUID(),
+      position: {
+        x: sourceNode.position.x + 30,
+        y: sourceNode.position.y + 30,
+      },
+      selected: false,
+      data: {
+        ...sourceNode.data,
+        isInitial: false,
+      },
+    };
+
+    useFlowContentStore.setState({
+      workflow: {
+        ...workflow,
+        nodes: [...workflow.nodes, clonedNode],
+      },
+    });
+  };
+
+  const setAsInitial = (nodeId: string) => {
+    const { workflow } = useFlowContentStore.getState();
+    if (!workflow) return;
+
+    const updatedNodes = workflow.nodes.map((node) => ({
+      ...node,
+      data: {
+        ...node.data,
+        isInitial: node.id === nodeId,
+      },
+    }));
+
+    useFlowContentStore.setState({
+      workflow: {
+        ...workflow,
+        nodes: updatedNodes,
+      },
+    });
+  };
+
+  return { add, remove, updateNode, clone, setAsInitial };
 }

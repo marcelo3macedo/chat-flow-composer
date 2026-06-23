@@ -1,10 +1,10 @@
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import { InformationCircleIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import { useNodeState } from "@Composer/hooks/useNodeState";
 import type { ModalProps } from "@Composer/interfaces/Plugin";
 import useModalStore from "@Composer/store/flow/modal";
 
-export function Modal({ Icon, isOpen, title, children }: ModalProps) {
+export function Modal({ Icon, isOpen, title, description, children }: ModalProps) {
   const { props } = useModalStore();
   const { updateNode } = useNodeState();
   const setSelected = useModalStore(state => state.setSelected);
@@ -39,6 +39,13 @@ export function Modal({ Icon, isOpen, title, children }: ModalProps) {
             </div>
           </div>
         </div>
+
+        {description && (
+          <div className="flex items-start gap-2 bg-blue-50 border-b border-blue-100 px-4 py-3 text-sm text-blue-800">
+            <InformationCircleIcon className="h-5 w-5 shrink-0 text-blue-500" />
+            <p>{description}</p>
+          </div>
+        )}
 
         <div className="p-4 flex-grow overflow-y-auto">
           {children}
