@@ -22,7 +22,7 @@ export function VariablesNode(props: NodeProps) {
       ) : (
         <div className="space-y-0.5 text-left">
           {filled.slice(0, 2).map((variable) => (
-            <p key={variable.id} className="text-[9px] text-gray-300 truncate">
+            <p key={variable.id} className="text-[8px] text-gray-300 truncate">
               <span className="font-semibold text-[#bd93f9]">{variable.title}</span>
               <span className="text-gray-500"> = </span>
               <span>{variable.value || '—'}</span>

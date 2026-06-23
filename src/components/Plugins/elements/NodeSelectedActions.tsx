@@ -1,7 +1,10 @@
-import type { NodeProps } from "@xyflow/react";
-import { useNodeState } from "@Composer/hooks/useNodeState";
 import { FlagIcon, DocumentDuplicateIcon } from "@heroicons/react/24/outline";
+
+import { useNodeState } from "@Composer/hooks/useNodeState";
+
 import { NodeActionDelete } from "./actions/NodeActionDelete";
+
+import type { NodeProps } from "@xyflow/react";
 
 interface NodeSelectedActionsProps {
   selected?: boolean;

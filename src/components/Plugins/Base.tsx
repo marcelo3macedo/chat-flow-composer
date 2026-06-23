@@ -1,5 +1,5 @@
-import { Handle, Position } from "@xyflow/react";
 import { PlayIcon } from "@heroicons/react/20/solid";
+import { Handle, Position } from "@xyflow/react";
 
 import type { BaseNodeProps } from "@Composer/interfaces/Plugin";
 import useModalStore from "@Composer/store/flow/modal";
@@ -56,7 +56,7 @@ export function BaseNode({
       <NodeSelectedActions selected={selected} props={props} />
 
       {/* Target handle */}
-      {handleType === 'source-target' && (
+      {handleType !== 'source-only' && (
         <Handle 
           type="target" 
           position={Position.Left} 
@@ -65,11 +65,13 @@ export function BaseNode({
       )}
       
       {/* Source handle */}
-      <Handle 
-        type="source" 
-        position={Position.Right} 
-        className="w-2 h-2 bg-[#8be9fd] border border-[#1e1f29]"
-      />
+      {handleType !== 'branch' && (
+        <Handle 
+          type="source" 
+          position={Position.Right} 
+          className="w-2 h-2 bg-[#8be9fd] border border-[#1e1f29]"
+        />
+      )}
 
       {/* Header: Icon + Node Type */}
       <div className="flex items-center gap-1 border-b border-[#44475a]/40 bg-[#20222c]/50 px-2 py-1 rounded-t-lg">

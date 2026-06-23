@@ -23,18 +23,18 @@ export function Modal({ Icon, isOpen, title, description, children }: ModalProps
 
   return (
     <div className="fixed left-0 top-0 inset-0 py-12 z-50 bg-black bg-opacity-50 flex items-center justify-center transition-opacity duration-300" onClick={onClose}>
-      <div className="bg-white min-h-[75vh] w-full max-w-2xl mx-auto rounded-2xl shadow-lg relative flex flex-col overflow-hidden" onClick={(e) => e.stopPropagation()}>
-        <div className="bg-gray-300 p-4">
+      <div className="bg-white w-full max-w-2xl mx-auto rounded-2xl shadow-lg relative flex flex-col overflow-hidden" onClick={(e) => e.stopPropagation()}>
+        <div className="bg-gray-200 p-4">
           <div className="flex items-center">
             <div className="w-full flex items-center">
-              <Icon className="h-6 w-6 text-slate-700" />
-              <h2 className="text-xl px-2 font-semibold">{title}</h2>
+              <Icon className="h-5 w-5 text-slate-700" />
+              <h2 className="text-lg px-2 font-semibold">{title}</h2>
             </div>
             <div>
               <button
                 onClick={onClose}
                 className="text-gray-500 hover:text-gray-700">
-                <XMarkIcon className="h-6 w-6 text-slate-700" />
+                <XMarkIcon className="h-5 w-5 text-slate-700" />
               </button>
             </div>
           </div>
@@ -55,13 +55,13 @@ export function Modal({ Icon, isOpen, title, description, children }: ModalProps
           <button
             onClick={onClose}
             className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 transition-colors">
-            Cancel
+            Cancelar
           </button>
           <button
             onClick={onSave}
             className="px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-lg hover:bg-blue-600 transition-colors"
           >
-            Save
+            Salvar
           </button>
         </div>
       </div>
